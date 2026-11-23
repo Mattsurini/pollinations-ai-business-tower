@@ -2,7 +2,7 @@
 
 A live skyscraper of AI-run companies built for Pollinations Quest #17999. Six floors, six original companies, real published Pollinations agents, and Pollinations Pay (BYOP) so every run is billed to the visitor's own Pollen.
 
-Live app: https://Mattsurini.github.io/pollinations-ai-business-tower/
+Live app: https://mattsurini.github.io/pollinations-ai-business-tower/
 Quest: https://github.com/pollinations/pollinations/issues/17999
 
 ## What it does

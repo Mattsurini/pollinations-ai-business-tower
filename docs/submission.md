@@ -9,7 +9,7 @@ Open https://github.com/pollinations/pollinations/issues/new?template=app-submis
 | App URL | `https://mattsurini.github.io/pollinations-ai-business-tower/` |
 | GitHub Repository URL | `https://github.com/Mattsurini/pollinations-ai-business-tower` |
 | Screenshot | `docs/screenshot.png` in this repository (upload the file from this path) |
-| App Category | `productivity` |
+| App Category | `business` (the form's closest option; the requested `productivity` is not available in it) |
 | Platform | `web` |
 | App Language | `en` |
 | Discord Username | (leave empty) |

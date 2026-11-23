@@ -1,5 +1,7 @@
 # MERIDIAN — AI Business Tower
 
+[![Made with pollinations.ai](https://raw.githubusercontent.com/pollinations/pollinations/main/packages/ui/src/brand/badge-made-with.svg)](https://pollinations.ai/?ref=badge)
+
 A live skyscraper of AI-run companies built for Pollinations Quest #17999. Six floors, six original companies, real published Pollinations agents, and Pollinations Pay (BYOP) so every run is billed to the visitor's own Pollen.
 
 Live app: https://mattsurini.github.io/pollinations-ai-business-tower/

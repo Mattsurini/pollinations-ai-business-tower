@@ -1,0 +1,260 @@
+import type { Company } from '../types';
+
+// Floors 6 → 1. Each floor's agents are resolved at runtime from the public
+// /text/models?agent=true catalogue; preferredAgents is only a priority list.
+export const companies: Company[] = [
+  {
+    id: 'northwind',
+    floor: 6,
+    name: 'Northwind Intelligence',
+    sector: 'Market intelligence',
+    tagline: 'Signals before they become headlines.',
+    description: 'A two-desk research firm that turns scattered market chatter into a single, defensible brief for founders deciding where to move next.',
+    founder: 'A. Okafor',
+    accent: '#67e8dc',
+    accentSoft: 'rgba(103,232,220,0.14)',
+    glyph: 'NW',
+    goal: 'Deliver one decision-grade opportunity brief per working day.',
+    crew: [
+      { role: 'Lead analyst', name: 'Northwind', duty: 'Frames the question and weighs evidence', tool: 'Market scan' },
+      { role: 'Researcher', name: 'Fieldnote', duty: 'Collects comparable signals and counterexamples', tool: 'Source sweep' },
+      { role: 'Reviewer', name: 'Quietloop', duty: 'Challenges weak claims before delivery', tool: 'Claim check' },
+    ],
+    preferredAgents: ['community/Marcus-Mok-GH/pt-northwind', 'community/Marcus-Mok-GH/pt-fieldnote', 'community/patbing/tower-researcher', 'community/xiaotian1171/atrium-fieldnotes'],
+    orders: [
+      {
+        id: 'nw-opportunity',
+        title: 'Opportunity brief',
+        brief: 'We are deciding whether to enter the mid-market maintenance software space. Produce a short brief with the three strongest signals, the strongest counter-signal, and one recommendation.',
+        deliverable: 'Opportunity brief',
+        minutes: 2,
+        stages: [
+          { label: 'Scan', instruction: 'List the market signals that matter for this decision. Separate facts from assumptions.' },
+          { label: 'Challenge', instruction: 'Argue the strongest case against entering this market, then revise your view.' },
+          { label: 'Brief', instruction: 'Write the final decision brief: three signals, one counter-signal, one recommendation, and what would change your mind.' },
+        ],
+      },
+      {
+        id: 'nw-competitor',
+        title: 'Competitor teardown',
+        brief: 'Map the positioning of three competing approaches in this category and identify the gap none of them own.',
+        deliverable: 'Competitor teardown',
+        minutes: 2,
+        stages: [
+          { label: 'Map', instruction: 'Compare three competitor approaches on price, audience and promise. Be concrete.' },
+          { label: 'Gap', instruction: 'Identify the unowned position and write a one-paragraph thesis for it.' },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'clearclause',
+    floor: 5,
+    name: 'Clearclause',
+    sector: 'Contract review',
+    tagline: 'The risky line, found before it ships.',
+    description: 'A contract desk that reads supplier agreements the way an operator would: what can go wrong, who carries it, and what to say back.',
+    founder: 'M. Delgado',
+    accent: '#f6c177',
+    accentSoft: 'rgba(246,193,119,0.13)',
+    glyph: 'CC',
+    goal: 'Return a founder-readable risk memo within one working day.',
+    crew: [
+      { role: 'Clause lead', name: 'Clearclause', duty: 'Finds risky and unusual clauses', tool: 'Clause scan' },
+      { role: 'Negotiator', name: 'Quietloop', duty: 'Drafts a balanced counter-position', tool: 'Redline desk' },
+    ],
+    preferredAgents: ['community/xiaotian1171/atrium-clearclause', 'community/Marcus-Mok-GH/pt-quietloop', 'community/rekty/towers-foundry-legal'],
+    orders: [
+      {
+        id: 'cc-risk',
+        title: 'Vendor risk memo',
+        brief: 'Review a proposed data-processing vendor agreement. Assume auto-renewal, 60-day termination notice, and a broad indemnity. Flag what a founder should negotiate.',
+        deliverable: 'Vendor risk memo',
+        minutes: 2,
+        stages: [
+          { label: 'Triage', instruction: 'List the clauses that create real exposure, ranked by severity, in plain language.' },
+          { label: 'Ask', instruction: 'Draft the three counter-clauses you would send back, with a short rationale for each.' },
+        ],
+      },
+      {
+        id: 'cc-renewal',
+        title: 'Renewal decision',
+        brief: 'Compare renewing, renegotiating, and replacing a software contract that rising in price by 30%. Produce a recommendation for a small team.',
+        deliverable: 'Renewal recommendation',
+        minutes: 2,
+        stages: [
+          { label: 'Options', instruction: 'Set out renew / renegotiate / replace with the cost, risk and switching effort of each.' },
+          { label: 'Recommend', instruction: 'Pick one option and state the specific trigger that would reverse the decision.' },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'novasignal',
+    floor: 4,
+    name: 'Nova Signal',
+    sector: 'Outreach',
+    tagline: 'Fewer messages. Better replies.',
+    description: 'An outreach studio that writes like a person and measures like a lab: one hypothesis per campaign, one clean result at the end.',
+    founder: 'J. Park',
+    accent: '#a78bfa',
+    accentSoft: 'rgba(167,139,250,0.13)',
+    glyph: 'NS',
+    goal: 'Ship one tested outreach sequence per week.',
+    crew: [
+      { role: 'Outreach lead', name: 'Nova', duty: 'Builds the sequence and its hypothesis', tool: 'Sequence builder' },
+      { role: 'Copy desk', name: 'Aurora', duty: 'Tightens every line for clarity', tool: 'Line edit' },
+    ],
+    preferredAgents: ['community/mhmdrizki803-boop/towers-nova-outreach', 'community/mhmdrizki803-boop/towers-aurora-copy', 'community/patbing/tower-writer'],
+    orders: [
+      {
+        id: 'ns-sequence',
+        title: 'Outreach sequence',
+        brief: 'Write a three-touch outreach sequence to independent design leads for a small scheduling tool. No hype, no fake personalisation.',
+        deliverable: 'Three-touch sequence',
+        minutes: 2,
+        stages: [
+          { label: 'Hypothesis', instruction: 'State what problem the recipient recognises and why they would reply. Then write three short touches.' },
+          { label: 'Cut', instruction: 'Cut every touch by a third without losing the point. Explain what you removed.' },
+        ],
+      },
+      {
+        id: 'ns-replies',
+        title: 'Reply handling',
+        brief: 'Draft short, honest replies to four common responses: interested, too busy, no budget, and not relevant.',
+        deliverable: 'Reply playbook',
+        minutes: 2,
+        stages: [
+          { label: 'Playbook', instruction: 'Write the four replies in a natural voice. Do not pressure or guilt the recipient.' },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'shelflife',
+    floor: 3,
+    name: 'Shelflife Studio',
+    sector: 'Brand & copy',
+    tagline: 'Names that survive the shelf.',
+    description: 'A tiny naming and copy studio for products that need to be understood in five seconds, not admired in a pitch deck.',
+    founder: 'R. Imani',
+    accent: '#fb7185',
+    accentSoft: 'rgba(251,113,133,0.13)',
+    glyph: 'SL',
+    goal: 'Deliver a name, a line, and the reasoning behind both.',
+    crew: [
+      { role: 'Studio lead', name: 'Shelflife', duty: 'Generates and filters naming territory', tool: 'Name board' },
+      { role: 'Wordsmith', name: 'Aurora', duty: 'Writes the final line and rationale', tool: 'Copy bench' },
+    ],
+    preferredAgents: ['community/xiaotian1171/atrium-shelflife', 'community/mhmdrizki803-boop/towers-aurora-copy', 'community/smplstuff/title-generator', 'community/patbing/tower-writer'],
+    orders: [
+      {
+        id: 'sl-naming',
+        title: 'Naming round',
+        brief: 'Name a refillable cleaning concentrate aimed at small apartments. Give five candidates, reject two, and keep three with a reason each.',
+        deliverable: 'Naming round',
+        minutes: 2,
+        stages: [
+          { label: 'Expand', instruction: 'Generate ten naming directions across different territories, not just synonyms.' },
+          { label: 'Filter', instruction: 'Reject seven with a one-line reason. Keep three and say who each one is for.' },
+          { label: 'Line', instruction: 'Write a five-word line for the strongest name and explain the choice.' },
+        ],
+      },
+      {
+        id: 'sl-landing',
+        title: 'Landing page copy',
+        brief: 'Write the hero, three benefit lines, and one objection-handler for the winning name.',
+        deliverable: 'Landing copy',
+        minutes: 2,
+        stages: [
+          { label: 'Draft', instruction: 'Write the page copy in plain, specific language. No adjectives without evidence.' },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'seedbank',
+    floor: 2,
+    name: 'Seedbank Labs',
+    sector: 'Applied research',
+    tagline: 'Small experiments, honest notes.',
+    description: 'An internal research lab that turns a loose question into a testable experiment and a decision memo a founder can actually sign.',
+    founder: 'T. Nakamura',
+    accent: '#4ade80',
+    accentSoft: 'rgba(74,222,128,0.13)',
+    glyph: 'SB',
+    goal: 'One experiment design and decision memo per request.',
+    crew: [
+      { role: 'Research lead', name: 'Seedbank', duty: 'Frames the question and the experiment', tool: 'Experiment desk' },
+      { role: 'Skeptic', name: 'Hexa', duty: 'Finds the failure mode first', tool: 'Pre-mortem' },
+    ],
+    preferredAgents: ['community/tomdacatto/tower-seedbank', 'community/mhmdrizki803-boop/towers-hexa-research', 'community/patbing/tower-researcher'],
+    orders: [
+      {
+        id: 'sb-experiment',
+        title: 'Experiment design',
+        brief: 'We believe removing the free trial will increase paid conversion. Design the smallest honest experiment to test this, including what would prove us wrong.',
+        deliverable: 'Experiment design',
+        minutes: 2,
+        stages: [
+          { label: 'Design', instruction: 'State the hypothesis, the smallest sample, the metric, and the guardrail metric.' },
+          { label: 'Pre-mortem', instruction: 'Assume the experiment failed. List the three most likely reasons and what you would change.' },
+        ],
+      },
+      {
+        id: 'sb-memo',
+        title: 'Decision memo',
+        brief: 'Turn the experiment design into a one-page decision memo for a founder who has five minutes.',
+        deliverable: 'Decision memo',
+        minutes: 2,
+        stages: [
+          { label: 'Memo', instruction: 'Write the memo: decision, evidence needed, cost of being wrong, and the go/no-go rule.' },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'pixelbloom',
+    floor: 1,
+    name: 'Pixel Bloom',
+    sector: 'Design operations',
+    tagline: 'A brief a designer can start today.',
+    description: 'A design operations desk that converts vague product asks into a scoped brief, an accessibility checklist, and a realistic estimate.',
+    founder: 'S. Rahman',
+    accent: '#38bdf8',
+    accentSoft: 'rgba(56,189,248,0.13)',
+    glyph: 'PB',
+    goal: 'Every brief ship-ready in one pass.',
+    crew: [
+      { role: 'Design lead', name: 'Pixel Bloom', duty: 'Turns the ask into a structured brief', tool: 'Brief builder' },
+      { role: 'QA', name: 'Bug Report', duty: 'Checks the brief for gaps and edge cases', tool: 'Gap check' },
+    ],
+    preferredAgents: ['community/mhmdrizki803-boop/towers-pixel-bloom', 'community/danhquach/bug-report-writer', 'community/Marcus-Mok-GH/pt-fieldnote'],
+    orders: [
+      {
+        id: 'pb-brief',
+        title: 'Design brief',
+        brief: 'Turn this request into a brief: "our onboarding feels confusing on mobile". Include the user problem, the screens involved, success criteria, and accessibility requirements.',
+        deliverable: 'Design brief',
+        minutes: 2,
+        stages: [
+          { label: 'Structure', instruction: 'Write the brief with sections: problem, screens, success criteria, constraints, out of scope.' },
+          { label: 'Gap check', instruction: 'List the unanswered questions a designer would ask, and propose a default answer for each.' },
+        ],
+      },
+      {
+        id: 'pb-audit',
+        title: 'Accessibility pass',
+        brief: 'Review the brief against WCAG basics for a mobile onboarding flow and list concrete acceptance criteria.',
+        deliverable: 'Accessibility criteria',
+        minutes: 2,
+        stages: [
+          { label: 'Criteria', instruction: 'Give six testable accessibility acceptance criteria for this flow, with how to verify each.' },
+        ],
+      },
+    ],
+  },
+];
+
+export const companyByFloor = (floor: number) => companies.find((c) => c.floor === floor);
+export const companyById = (id: string) => companies.find((c) => c.id === id);
